@@ -6,7 +6,7 @@ namespace _1_TypyGeneryczne
 {
     public class KolejkaKolowa
     {
-        private object[] bufor;
+        private double[] bufor;
         private int poczatekBufora;
         private int koniecBufora;
 
@@ -21,7 +21,7 @@ namespace _1_TypyGeneryczne
 
         {
 
-            bufor = new object[pojemnosc + 1];
+            bufor = new double[pojemnosc + 1];
             poczatekBufora = 0;
             koniecBufora = 0;
 
@@ -29,7 +29,7 @@ namespace _1_TypyGeneryczne
 
 
 
-        public void Zapisz  (object wartosc)
+        public void Zapisz  (double wartosc)
 
         {
             bufor[koniecBufora] = wartosc;
@@ -44,7 +44,7 @@ namespace _1_TypyGeneryczne
         }
 
 
-        public object  Czytaj()
+        public double  Czytaj()
         {
 
             var wynik = bufor[poczatekBufora];
