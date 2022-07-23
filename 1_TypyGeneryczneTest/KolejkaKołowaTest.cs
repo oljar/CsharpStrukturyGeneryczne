@@ -32,8 +32,8 @@ namespace _1_TypyGeneryczneTest
         public void PierwszyWchodziPierwszyWychodzi()
         {
             var kolejka = new KolejkaKolowa(pojemnosc: 3);
-            var wartosc1 = 10;
-            var wartosc2 = 20;
+            var wartosc1 = "10";
+            var wartosc2 = "20";
 
 
 
@@ -63,6 +63,7 @@ namespace _1_TypyGeneryczneTest
             Assert.AreEqual(wartosci[4], kolejka.Czytaj());
             Assert.AreEqual(wartosci[5], kolejka.Czytaj());
             Assert.IsTrue(kolejka.JestPusty);
+
         }
 
 
