@@ -4,9 +4,9 @@ using System.Text;
 
 namespace _1_TypyGeneryczne
 {
-    public class KolejkaKolowa
+    public class KolejkaKolowa<T>
     {
-        private double[] bufor;
+        private T[] bufor;
         private int poczatekBufora;
         private int koniecBufora;
 
@@ -21,7 +21,7 @@ namespace _1_TypyGeneryczne
 
         {
 
-            bufor = new double[pojemnosc + 1];
+            bufor = new T [pojemnosc + 1];
             poczatekBufora = 0;
             koniecBufora = 0;
 
@@ -29,7 +29,7 @@ namespace _1_TypyGeneryczne
 
 
 
-        public void Zapisz  (double wartosc)
+        public void Zapisz  (T wartosc)
 
         {
             bufor[koniecBufora] = wartosc;
@@ -44,7 +44,7 @@ namespace _1_TypyGeneryczne
         }
 
 
-        public double  Czytaj()
+        public T Czytaj()
         {
 
             var wynik = bufor[poczatekBufora];
