@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _2_KolekcjeGeneryczne
 {
@@ -9,7 +10,7 @@ namespace _2_KolekcjeGeneryczne
 
         //inicjalizacja tabliczy z wartościami -1szy sposób
         {
-            Pracownik[] pracownicy = new Pracownik[]
+             List<Pracownik> pracownicy = new List<Pracownik> 
             {
                 new Pracownik { Imie="Joe", Nazwisko= "Kowalski" },
                 new Pracownik { Imie="Józef", Nazwisko= "Kowalski" },
@@ -23,69 +24,50 @@ namespace _2_KolekcjeGeneryczne
             }
 
 
-            for (int i = 0; i < pracownicy.Length; i++)
+            //zamiast pracownicy.lenght - pracownicy count
+
+
+            for (int i = 0; i < pracownicy.Count; i++)
             {
 
                 Console.WriteLine(pracownicy[i].Imie + " " + pracownicy[i].Nazwisko);
             }
 
+            //inicjalizacja tabliczy z wartościami -2gi sposób
+            List<Pracownik> pracownicy2 = new List<Pracownik>();
+
+            pracownicy2.Add(new Pracownik { Imie = "Elon", Nazwisko = "Musk" });
+            pracownicy2.Add(new Pracownik { Imie = "Robert", Nazwisko = "Lewandowski" });
 
 
 
-            //inicjalizacja tablicy  z wartościami - drugi sposób
 
-            Pracownik[] tab = new Pracownik[4];
-
-
-            tab[0] = new Pracownik { Imie = "Alan", Nazwisko = "Braz" };
-            tab[1] = new Pracownik { Imie = "Leon", Nazwisko = "Leonidas" };
-            tab[2] = new Pracownik { Imie = "Robert", Nazwisko = "Dab " };
-            tab[3] = new Pracownik { Imie = "Wlod", Nazwisko = "Put" };
-
-            foreach (var i in tab)
+            foreach (var pracownik in pracownicy2)
             {
-                Console.WriteLine(i.Imie + "  " + i.Nazwisko);
+                Console.WriteLine(pracownik.Imie + "  " + pracownik.Nazwisko);
             }
 
-            //inicjalizacja tablicy  z int
 
-            int[] tablica = new int[4];
-
-            tablica[0] = 1;   
-            tablica[1] = 2;   
-            tablica[2] = 3;   
-            tablica[3] = 4;
+            //inicjalizacja tabliczy z wartościami -1szy sposób
+            List<int> listaLiczb = new List<int> { 1, 2, 3, 4, 5 };
 
 
-            foreach (var i in tablica)
+            //inicjalizacja tabliczy z wartościami -2gi sposób
+            List<int> listaLiczb2 = new List<int>();
+            listaLiczb.Add(1);
+            listaLiczb.Add(5);
+            listaLiczb.Add(10);
+
+
+            foreach (var i in listaLiczb)
             {
                 Console.WriteLine(i);
             }
 
-
-            //inicjalizacja tablicy  z int
-
-            int[] tablica1 = new int[] { 5, 6, 7, 8 };
-
-            tablica1[0] = 100;
-
-            foreach (var i in tablica1)
+            foreach (var i in listaLiczb2)
             {
                 Console.WriteLine(i);
             }
-
-
-
-            //powiększenie tablicy przez stworzenie nowej
-            Array.Resize(ref tablica1, 31);
-
-            tablica1[30] = 991;
-            for (int i = 0; i < tablica1.Length; i++)
-            {
-
-                Console.WriteLine(tablica1[i]);
-            }
-
 
 
 
