@@ -18,6 +18,7 @@ namespace _2_KolekcjeGeneryczne
                 var pracownik = kolejka.Dequeue();
                 Console.WriteLine(pracownik.Imie + "  " + pracownik.Nazwisko);
             }
+        
         }
 
 

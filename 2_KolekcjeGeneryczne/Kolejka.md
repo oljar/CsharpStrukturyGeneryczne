@@ -21,6 +21,5 @@ Metoda Contains - Sprawdza czy dany element jest w kolejce oddaje True/False
 	kolejka.ToArray() - zrzuca do TABLICY
 	kolejka.Clear() - czyści kolejkę.  - Assert.AreEqual(0, kolejka.Count);
 	kolejka.Count() liczy ilość elementów. 
-
 	}
 

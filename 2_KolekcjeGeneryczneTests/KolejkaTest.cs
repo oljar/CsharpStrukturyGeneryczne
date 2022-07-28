@@ -61,8 +61,5 @@ namespace _2_KolekcjeGeneryczneTests
         }
 
 
-
-
-
     }
 }
