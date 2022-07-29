@@ -1,6 +1,10 @@
 ﻿Stos -  LiFo - Last In - Firts Out 
 Pozwala na odraczenie czynnosci mniej ważnej na ważną . 
-Nie można losowo wybierać elementów ze stosu za pomocą indeksu. 
+Nie można losowo wybierać elementów ze stosu za pomocą indeksu. 0
+
+
+var stos = new Stack<int>();
+
 Metody:
 
 stos.Pick() - dodawanie elementów na stos.
