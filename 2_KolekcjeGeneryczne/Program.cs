@@ -25,24 +25,60 @@ namespace _2_KolekcjeGeneryczne
             //SortedDictionary();
 
 
+            //SortedList();
+
+            var set1 = new SortedSet<int>();
+            set1.Add(8);
+            set1.Add(7);
+            set1.Add(6);
+            set1.Add(5);
+            set1.Add(90);
+            set1.Add(70);
+            set1.Add(1);
+            set1.Add(17);
+            set1.Add(17);
+            set1.Add(36);
+            set1.Add(10);
+
+            foreach (var item in set1)
+            {
+                Console.WriteLine(item);
+            }
+
+            var set2 = new SortedSet<string>();
+            set2.Add("d");
+            set2.Add("z");
+            set2.Add("w");
+            set2.Add("a");
+            set2.Add("g");
+            set2.Add("h");
+            set2.Add("j");
+            set2.Add("k");
+            set2.Add("k");
+            set2.Add("r");
+            set2.Add("t");
+
+            foreach (var item in set2)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        private static void SortedList()
+        {
             var listaPosortowana = new SortedList<int, string>();
             listaPosortowana.Add(3, "trzy");
             listaPosortowana.Add(1, "jeden");
             listaPosortowana.Add(4, "cztery");
             listaPosortowana.Add(2, "dwa");
 
-            foreach ( var item in listaPosortowana)
+            foreach (var item in listaPosortowana)
 
             {
                 Console.WriteLine(item.Value);
 
             }
-
-
-
-
-
-
         }
 
         private static void SortedDictionary()
