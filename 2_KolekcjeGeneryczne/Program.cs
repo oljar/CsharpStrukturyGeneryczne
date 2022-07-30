@@ -13,19 +13,126 @@ namespace _2_KolekcjeGeneryczne
 
             // HashSet();
 
-            //LinkedList();
+
+            //LinkedList1();
+            //LinkedList2();
+
+
+            //Dictionary1();
+
+            Dictionary2();
 
 
 
+
+        }
+
+        private static void Dictionary2()
+        {
+
+            //Inicjalizacja słownika 
+
+            var pracownicy = new Dictionary<string, List<Pracownik>>();
+            pracownicy.Add("Barbor", new List<Pracownik>() { new Pracownik { Nazwisko = "Olsza" }, new Pracownik { Nazwisko = "Nowak" } });
+            pracownicy["Barbor"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Firma : " + item.Key);
+
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine(pracownik.Nazwisko);
+                }
+
+            }
+
+
+            var pracownicyDzial = new Dictionary<string, List<Pracownik>>();
+            pracownicyDzial.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Nazwisko = "Więcek" },
+                                                                      new Pracownik { Nazwisko = "Kaczor" },
+                                                                      new Pracownik { Nazwisko = "Wisniewski" },
+                                                                                                            });
+
+            pracownicyDzial["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Wielowiejski" });
+
+
+            pracownicyDzial.Add("KontrolaJakosci", new List<Pracownik>() { new Pracownik { Nazwisko = "Żubr" },
+                                                                      new Pracownik { Nazwisko = "Wiśniewski" },
+                                                                      new Pracownik { Nazwisko = "Formela" },
+                                                                                                            });
+
+            pracownicyDzial["KontrolaJakosci"].Add(new Pracownik { Nazwisko = "Waldorf" });
+
+
+
+
+
+
+
+            foreach (var item in pracownicyDzial)
+
+            {
+                Console.WriteLine();
+                Console.WriteLine("Dział : " + item.Key);
+
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine(pracownik.Nazwisko);
+                }
+
+            }
+
+
+
+            Console.WriteLine();
+            var lista = new List<string>();
+
+
+            foreach (var item in pracownicyDzial.Keys)
+            {
+                lista.Add(item);
+
+            }
+
+            Console.WriteLine($"lista działów {lista[1]}");
+            foreach (var item in pracownicyDzial["Ksiegowosc"])
+            {
+                Console.WriteLine(item.Nazwisko);
+            }
+        }
+
+        private static void Dictionary1()
+        {
+            //Inicjalizacja słownika 
+            // Dictionary<string, Pracownik> pracownicy = new Dictionary<string, Pracownik>();
+            var pracownicy = new Dictionary<string, Pracownik>();
+            pracownicy.Add("ksywaNowy", new Pracownik { Nazwisko = "Nowak" });
+            pracownicy.Add("ksywaAnioł", new Pracownik { Nazwisko = "Anioł" });
+            pracownicy.Add("KsywaBlacha", new Pracownik { Nazwisko = "Balcerek" });
+
+            var kowal = pracownicy["ksywaNowy"];
+            foreach (var pracownik in pracownicy)
+
+            {
+
+                Console.WriteLine($"Klucz - {pracownik.Key}   Wartość - {pracownik.Value.Nazwisko} ");
+
+            }
+        }
+
+        private static void LinkedList1()
+        {
             LinkedList<int> lista = new LinkedList<int>();
 
             lista.AddFirst(5);
             lista.AddFirst(6);
             lista.AddFirst(7);
-            
+
             // First pobiera pierwszy element
             var elementPierwszy = lista.First;
-            
+
             // Last pobiera ostatni element
             var elementOstatni = lista.Last;
 
@@ -52,12 +159,9 @@ namespace _2_KolekcjeGeneryczne
                 Console.WriteLine(wezel.Value);
                 wezel = wezel.Next;
             }
-
-
-
         }
 
-        private static void LinkedList()
+        private static void LinkedList2()
         {
             LinkedList<int> lista = new LinkedList<int>();
 
