@@ -22,6 +22,31 @@ namespace _2_KolekcjeGeneryczne
 
             //Dictionary2();
 
+            //SortedDictionary();
+
+
+            var listaPosortowana = new SortedList<int, string>();
+            listaPosortowana.Add(3, "trzy");
+            listaPosortowana.Add(1, "jeden");
+            listaPosortowana.Add(4, "cztery");
+            listaPosortowana.Add(2, "dwa");
+
+            foreach ( var item in listaPosortowana)
+
+            {
+                Console.WriteLine(item.Value);
+
+            }
+
+
+
+
+
+
+        }
+
+        private static void SortedDictionary()
+        {
 
 
             // Sortuje kolejność klucza przy wypisywaniu. 
@@ -47,17 +72,13 @@ namespace _2_KolekcjeGeneryczne
                                                           });
 
 
-        
 
-        foreach (var item in pracownicy)
+
+            foreach (var item in pracownicy)
             {
                 Console.WriteLine($"Dział:{item.Key} ; ilość pracowników:{item.Value.Count}");
             }
-
-
-
         }
-
 
         private static void Dictionary2()
         {
