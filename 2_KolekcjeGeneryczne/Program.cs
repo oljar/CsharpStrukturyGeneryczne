@@ -20,12 +20,44 @@ namespace _2_KolekcjeGeneryczne
 
             //Dictionary1();
 
-            Dictionary2();
+            //Dictionary2();
 
+
+
+            // Sortuje kolejność klucza przy wypisywaniu. 
+
+            var pracownicy = new SortedDictionary<string, List<Pracownik>>();
+
+
+            pracownicy.Add("Kontroli", new List<Pracownik> { new Pracownik {Imie = "Olek", Nazwisko = "Dżugaszwili" },
+                                                           new Pracownik {Imie = "Szymon", Nazwisko = "Swade" },
+                                                           new Pracownik {Imie = "Wiesław", Nazwisko = "Orłowski" } });
+
+
+            pracownicy.Add("Handlowy", new List<Pracownik> { new Pracownik {Imie = "Adam", Nazwisko = "Nowak" },
+                                                           new Pracownik {Imie = "Tomek", Nazwisko = "As" },
+                                                           new Pracownik {Imie = "Robert", Nazwisko = "Wars" } });
+
+
+
+
+
+            pracownicy.Add("Napraw", new List<Pracownik> { new Pracownik {Imie = "Radosław", Nazwisko = "Gugała" },
+                                                           new Pracownik {Imie = "Sławomir", Nazwisko = "Mocny" },
+                                                          });
+
+
+        
+
+        foreach (var item in pracownicy)
+            {
+                Console.WriteLine($"Dział:{item.Key} ; ilość pracowników:{item.Value.Count}");
+            }
 
 
 
         }
+
 
         private static void Dictionary2()
         {

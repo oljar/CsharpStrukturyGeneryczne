@@ -1,0 +1,4 @@
+﻿SortedDictionary - sortuje elementy klucze słownika w kolejności Alfabetycznej.
+
+var pracownicy = new SortedDictionary<string, List<Pracownik>>();
+
