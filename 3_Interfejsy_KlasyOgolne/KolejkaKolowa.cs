@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace _1_TypyGeneryczne
+namespace _3_Interfejsy_KlasyOgolne
 {
-  
-    public class KolejkaKolowa<T>
 
 
+
+    public class KolejkaKolowa<T> : IKolejka<T>
     {
         private T[] bufor;
         private int poczatekBufora;
@@ -20,7 +20,6 @@ namespace _1_TypyGeneryczne
 
 
         public KolejkaKolowa(int pojemnosc)
-
 
         {
 
@@ -89,5 +88,8 @@ namespace _1_TypyGeneryczne
 
 
     }
+
+
+
 
 }

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "Project"
+    },
+    "3_Interface": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\RepoKursy\\CsharpStrukturyGeneryczne\\3_Interfejsy_KlasyOgolne\\Program.cs"
+    }
+  }
+}

@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\1_TypyGeneryczne\1_TypyGeneryczne.csproj" />
+    <ProjectReference Include="..\2_KolekcjeGeneryczne\2_KolekcjeGeneryczne.csproj" />
   </ItemGroup>
 
 </Project>
