@@ -2,7 +2,13 @@
 
 namespace _3_Interfejsy_KlasyOgolne
 {
-    public interface IKolejka<T> : IEnumerable<T>
+
+
+    //Interfejsy które mocą być  dodawane  oprócz IEnumerable<T>
+   ///public interface IKolejka<T> : IEnumerable<T>,IList<T>,ICollection<T>,IDictionary<T,V>,IReadOnlyCollection<T>, ISet<T>, IComparer<T>,IEqualityComparer<T>
+
+
+    public interface IKolejka<T> : IEnumerable<T> 
     {
         bool JestPelny { get; }
         bool JestPusty { get; }
