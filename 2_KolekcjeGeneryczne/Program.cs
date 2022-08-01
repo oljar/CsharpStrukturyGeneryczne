@@ -29,25 +29,23 @@ namespace _2_KolekcjeGeneryczne
 
             // SortedList_2();
 
-            var pracownicy = new Dictionary<string, SortedSet<Pracownik>>();
+            var pracownicy = new DzialyKolekcja();
 
-            pracownicy.Add("Sprzedaż", new SortedSet<Pracownik>(new PracownikComparer()));
-
-
-
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Kaczor" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Wiewiór" });
-            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Ryba " });
+            pracownicy.Add("Sprzedaż", new Pracownik { Nazwisko = "Brzęczyszczykiewicz" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Kaczor" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Bar" })
+                      .Add("Sprzedaż", new Pracownik { Nazwisko = "Jar" });
 
 
 
 
-            pracownicy.Add("Księgowość", new SortedSet<Pracownik>(new PracownikComparer()));
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Miłczyński" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Terela" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Gac" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Nowak" });
-            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+
+
+            pracownicy.Add("Handlowy", new Pracownik { Nazwisko = "Tayor" })
+                  .Add("Handlowy", new Pracownik { Nazwisko = "Willis" })
+                  .Add("Handlowy", new Pracownik { Nazwisko = "Mae" })
+                  .Add("Handlowy", new Pracownik { Nazwisko = "Jare" });
 
 
 
