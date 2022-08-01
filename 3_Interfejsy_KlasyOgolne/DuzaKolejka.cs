@@ -5,16 +5,16 @@ namespace _3_Interfejsy_KlasyOgolne
     public class DuzaKolejka<T>:IKolejka<T>
     {
 
-        Queue<T> kolejka;
+        public  Queue<T> kolejka;
 
         public DuzaKolejka()
         {
              kolejka = new Queue<T>();
         }
 
-        public bool JestPelny => throw new System.NotImplementedException();
+        public  bool JestPelny => throw new System.NotImplementedException();    //dodano virtual
 
-        public bool JestPusty
+        public virtual bool JestPusty       //dodano virtual
         {
 
             get
@@ -26,12 +26,12 @@ namespace _3_Interfejsy_KlasyOgolne
         }
             
 
-        public T Czytaj()
+        public virtual T Czytaj()       //dodano virtual
         {
             return kolejka.Dequeue();
         }
 
-        public void Zapisz(T wartosc)
+        public virtual void Zapisz(T wartosc) //dodano virtual
         {
             kolejka.Enqueue(wartosc);
         }
