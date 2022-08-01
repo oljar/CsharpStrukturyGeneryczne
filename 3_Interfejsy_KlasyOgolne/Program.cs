@@ -12,6 +12,15 @@ namespace _3_Interfejsy_KlasyOgolne
 
                 WprowadzanieDanych(kolejka);
 
+                foreach (var item in kolejka)
+                {
+                    Console.WriteLine($" wyliczenie z pętli {item}");
+
+                }
+
+
+
+
                 PrzetwarzanieDanych(kolejka);
 
             }

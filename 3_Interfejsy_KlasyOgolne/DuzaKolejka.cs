@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace _3_Interfejsy_KlasyOgolne
 {
@@ -12,7 +13,7 @@ namespace _3_Interfejsy_KlasyOgolne
              kolejka = new Queue<T>();
         }
 
-        public  bool JestPelny => throw new System.NotImplementedException();    //dodano virtual
+        public  virtual bool JestPelny => throw new System.NotImplementedException();    //dodano virtual
 
         public virtual bool JestPusty       //dodano virtual
         {
@@ -31,9 +32,42 @@ namespace _3_Interfejsy_KlasyOgolne
             return kolejka.Dequeue();
         }
 
+       
+
         public virtual void Zapisz(T wartosc) //dodano virtual
         {
             kolejka.Enqueue(wartosc);
+        }
+
+
+
+
+
+
+        // przy dodaniu do definicji interfejsu IKoleka ,  interfejsu IEnumerable<T> jest wymagana implementacja poniższych metod w klasie " Dzuża Kolejka"
+
+        public IEnumerator<T> GetEnumerator()
+
+        {
+
+            //można zrobić jakieś filtrowanie   
+
+            //foreach (var item in kolejka)
+            //yield return item;
+
+            return kolejka.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            //można zrobić jakieś filtrowanie   
+
+
+            //foreach (var item in kolejka)
+            //yield return item;
+
+            return GetEnumerator();
+
         }
     }
 }
