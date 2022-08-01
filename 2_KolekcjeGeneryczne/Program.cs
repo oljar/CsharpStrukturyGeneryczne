@@ -31,6 +31,7 @@ namespace _2_KolekcjeGeneryczne
 
             var pracownicy = new DzialyKolekcja();
 
+
             pracownicy.Add("Sprzedaż", new Pracownik { Nazwisko = "Brzęczyszczykiewicz" })
                       .Add("Sprzedaż", new Pracownik { Nazwisko = "Kaczor" })
                       .Add("Sprzedaż", new Pracownik { Nazwisko = "Bar" })

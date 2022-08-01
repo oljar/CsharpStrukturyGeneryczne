@@ -5,6 +5,7 @@ using System.Text;
 
 namespace _2_KolekcjeGeneryczne
 {
+
     class PracownikComparer : IEqualityComparer<Pracownik>, IComparer<Pracownik>
     {
         public int Compare([AllowNull] Pracownik x, [AllowNull] Pracownik y)

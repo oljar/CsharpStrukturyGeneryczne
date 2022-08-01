@@ -19,7 +19,6 @@ namespace _2_KolekcjeGeneryczne
             this[nazwaDzialu].Add(pracownik);
             return this;
 
-
         }
     }
 }
