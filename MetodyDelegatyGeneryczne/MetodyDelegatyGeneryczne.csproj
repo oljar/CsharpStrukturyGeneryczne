@@ -3,8 +3,6 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>_3_Interfejsy_KlasyOgolne</RootNamespace>
   </PropertyGroup>
 
 </Project>
-
