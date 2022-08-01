@@ -27,6 +27,44 @@ namespace _2_KolekcjeGeneryczne
 
             //SortedList();
 
+            // SortedList_2();
+
+            var pracownicy = new Dictionary<string, SortedSet<Pracownik>>();
+
+            pracownicy.Add("Sprzedaż", new SortedSet<Pracownik>(new PracownikComparer()));
+
+
+
+            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Kaczor" });
+            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Wiewiór" });
+            pracownicy["Sprzedaż"].Add(new Pracownik { Nazwisko = "Ryba " });
+
+
+
+
+            pracownicy.Add("Księgowość", new SortedSet<Pracownik>(new PracownikComparer()));
+            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Miłczyński" });
+            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Terela" });
+            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Gac" });
+            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Nowak" });
+            pracownicy["Księgowość"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+
+
+            foreach (var dzial in pracownicy)
+            {
+                Console.WriteLine(dzial.Key);
+                foreach ( var pracownik in dzial.Value)
+                {
+                    Console.WriteLine("\t" + pracownik.Nazwisko);
+
+                }
+            }
+
+        }
+
+        private static void SortedList_2()
+        {
             var set1 = new SortedSet<int>();
             set1.Add(8);
             set1.Add(7);
@@ -62,7 +100,6 @@ namespace _2_KolekcjeGeneryczne
             {
                 Console.WriteLine(item);
             }
-
         }
 
         private static void SortedList()

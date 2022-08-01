@@ -1,0 +1,4 @@
+﻿Użycie : IEqualityComparer<Pracownik>, IComparer<Pracownik>
+pozwala na sortowanie alfabetyczne i likwidowanie dubli
+
+class PracownikComparer : IEqualityComparer<Pracownik>, IComparer<Pracownik>
