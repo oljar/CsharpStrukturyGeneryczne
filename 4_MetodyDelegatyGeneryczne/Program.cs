@@ -24,7 +24,6 @@ namespace _4_MetodyDelegatyGeneryczne
 
 
 
-
                 PrzetwarzanieDanych(kolejka);
 
             }

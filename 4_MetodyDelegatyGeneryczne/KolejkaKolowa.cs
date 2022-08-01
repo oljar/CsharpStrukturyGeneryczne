@@ -18,7 +18,6 @@ namespace _4_MetodyDelegatyGeneryczne
             _pojemnosc = pojemnosc; 
         }
 
-
         public override void Zapisz(T wartosc)
         {
             base.Zapisz(wartosc);

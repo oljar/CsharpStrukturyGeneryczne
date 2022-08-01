@@ -27,7 +27,6 @@ namespace _4_MetodyDelegatyGeneryczne
 
         }
             
-
         public virtual T Czytaj()       //dodano virtual
         {
             return kolejka.Dequeue();

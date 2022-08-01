@@ -12,3 +12,18 @@ W nazwie ElementJako jest <Twyj> - dzięki temu nazwa będzie różna przy róż
 Następnie w klasie DużaKolejka - implementacja
 
 Parametry które przyjmuje metoda  również  są definiowane (jak są)   przez <T> 
+
+
+Wywołanie metody w program:
+
+{   
+        var elementyJakoInt = kolejka.ElementJako<int>();
+
+
+
+                foreach (var item in elementyJakoInt)
+                {
+                    Console.WriteLine(item);
+
+                }
+}
