@@ -20,4 +20,4 @@ Metoda typu  EXTENSION też musi być  STATYCZNA I PUBLICZNA
 Metoda rozszerzenia musi mieć słowo kluczowe this z elementem który chcemy rozszerzać (this IKolejka<T>kolejka) - metoda w oddzielnej klasie np. Extensions
 Wywołne w Main .( VS - menu podpowiedzi metoda z strzałką na dół )
 
-Console.WriteLine(item);
+kolejka.Drukuj();

@@ -6,13 +6,32 @@ namespace _4_MetodyDelegatyGeneryczne
     {
         static void Main(string[] args)
         {
+            static void KonsolaWypisz(object dane)//   Tu możnaby podstawić metodę druku na papier lub zapisu w bazie danych.
             {
+                Console.WriteLine($"Wypisuję za pomocą delegata {dane}");
+
+            }
+
+            
                 var kolejka = new KolejkaKolowa<double>();
 
 
                 WprowadzanieDanych(kolejka);
 
-                kolejka.Drukuj();
+                //KonsolaWypisz  - metoda statyczna
+
+                Drukarka konsolaWyjscie = new Drukarka(KonsolaWypisz);// konsolaWyjście - delegat - używa metody statycznej jako parametru
+
+
+                //Wywołanie Statycznej metody Drukuj z KolejkaExtension  parametrem jest obiekt konsolaWyjście klasy Drukarka czyli DELEGAT. 
+
+                
+                // Poniżej użycie metody Drukuj z delegatem
+                
+                kolejka.Drukuj(konsolaWyjscie);
+
+
+
 
                 var elementyJakoInt = kolejka.ElementJako<double,int>();
 
@@ -28,7 +47,7 @@ namespace _4_MetodyDelegatyGeneryczne
 
                 PrzetwarzanieDanych(kolejka);
 
-            }
+            
 
             static void PrzetwarzanieDanych(IKolejka<double> kolejka)
 
