@@ -5,22 +5,67 @@ namespace _4_MetodyDelegatyGeneryczne
     class Program
     {
         static void Main(string[] args)
-        {   
-            // Delegat Converter<Tin,Tout>
-            Converter<double, string> KonwerterString = d => d.ToString();
-            Converter<double, DateTime> KonwerterDateTime = d => new DateTime(2018,1,1).AddDays(d);
+        {
+           
+                var kolejka = new KolejkaKolowa<double>(pojemnosc:3);
+
+                 // Dodałem subskrybenta do tego wydarzenia.
+                kolejka.elementusuniety += Kolejka_elementUsuniety;
+
+                WprowadzanieDanych(kolejka);
+
+           
+
+              
 
 
-            var a = KonwerterString(3.1);
-            Console.WriteLine((a is string) );
+
+                
+
+            }
 
 
-            var b = KonwerterDateTime(2);
-            Console.WriteLine((b));
 
+        private static void Kolejka_elementUsuniety(object sender,ElementUsunietyEventArgs<double> e)
+        {
+            Console.WriteLine("kolejka jest pełna.Element usuniety to {0}  Nowy element to {1} ", e.ElementUsuniety, e.ElementNowy);
         }
+
+
+
+        static void PrzetwarzanieDanych(IKolejka<double> kolejka)
+
+            {
+                var suma = 0.0;
+                Console.WriteLine("W naszej kolejce jest :");
+
+                while (!kolejka.JestPusty)
+                {
+                    suma += kolejka.Czytaj();
+                }
+
+                Console.WriteLine(suma);
+            }
+        private static void WprowadzanieDanych(IKolejka<double> kolejka)
+        {
+            while (true)
+            {
+
+                var wartosc = 0.0;
+                var wartoscwejsciowa = Console.ReadLine();
+                if (double.TryParse(wartoscwejsciowa, out wartosc))
+                {
+                    kolejka.Zapisz(wartosc);
+                    continue;
+                }
+                break;
+            }
+        }
+
+
     }
 
+   
 
     public class Osoba
 

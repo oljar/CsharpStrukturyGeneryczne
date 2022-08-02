@@ -24,10 +24,20 @@ namespace _4_MetodyDelegatyGeneryczne
 
             if (kolejka.Count > _pojemnosc)
             {
-                kolejka.Dequeue();
+               var usuniety = kolejka.Dequeue();
+                PoUsunieciuElementu(usuniety, wartosc);
+               
             }
         }
 
+        private void PoUsunieciuElementu(T usuniety, T wartosc)
+        {
+            if (elementusuniety != null)
+            {
+                var args = new ElementUsunietyEventArgs<T>(usuniety, wartosc);
+                elementusuniety(this, args);
+            }
+        }
 
         public override bool JestPelny
         {
@@ -36,9 +46,30 @@ namespace _4_MetodyDelegatyGeneryczne
             {
                 return kolejka.Count == _pojemnosc;
             }
+        }
 
+        // EventArgs - 
+        //Pierwszy parametr obsługi zdarzenia jest sender- nadawca zdarzenia typ object - object sender 
+
+        // Drugi parametr - to TEventArgs - element do obsługi zdarzeń. 
+        public event EventHandler<ElementUsunietyEventArgs<T>> elementusuniety;
+
+    }
+
+    public class ElementUsunietyEventArgs<T>:EventArgs
+    {
+        public T ElementUsuniety { get; set; }
+        public T ElementNowy { get; set; }
+
+        public ElementUsunietyEventArgs(T elementUsuniety , T elementNowy)
+
+        {
+            ElementUsuniety = elementUsuniety;
+            ElementNowy = elementNowy;
 
         }
+
+
 
 
     }
