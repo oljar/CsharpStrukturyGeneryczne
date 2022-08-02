@@ -12,7 +12,9 @@ namespace _4_MetodyDelegatyGeneryczne
 
                 WprowadzanieDanych(kolejka);
 
-                var elementyJakoInt = kolejka.ElementJako<int>();
+                kolejka.Drukuj();
+
+                var elementyJakoInt = kolejka.ElementJako<double,int>();
 
 
 
@@ -41,9 +43,6 @@ namespace _4_MetodyDelegatyGeneryczne
 
                 Console.WriteLine(suma);
             }
-
-
-
 
         }
 

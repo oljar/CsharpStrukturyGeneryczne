@@ -70,14 +70,6 @@ namespace _4_MetodyDelegatyGeneryczne
 
         }
 
-        public IEnumerable<Twyj> ElementJako<Twyj>()
-        {
-            var konwerter = TypeDescriptor.GetConverter(typeof(T));
-            foreach (var item in kolejka)
-            {
-                var wynik = konwerter.ConvertTo(item, typeof(Twyj));
-                yield return (Twyj)wynik;
-            }
-        }
+      
     }
 }

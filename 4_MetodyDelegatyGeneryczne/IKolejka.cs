@@ -16,7 +16,7 @@ namespace _4_MetodyDelegatyGeneryczne
         T Czytaj();
         void Zapisz(T wartosc);
 
-        IEnumerable<Twyj>ElementJako<Twyj>();
+       
 
     }
 }
