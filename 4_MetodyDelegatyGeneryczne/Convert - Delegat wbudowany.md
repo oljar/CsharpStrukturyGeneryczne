@@ -1,11 +1,4 @@
-﻿using System;
-
-namespace _4_MetodyDelegatyGeneryczne
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {   
+﻿ {   
             // Delegat Converter<Tin,Tout>
             Converter<double, string> KonwerterString = d => d.ToString();
             Converter<double, DateTime> KonwerterDateTime = d => new DateTime(2018,1,1).AddDays(d);
@@ -18,19 +11,5 @@ namespace _4_MetodyDelegatyGeneryczne
             var b = KonwerterDateTime(2);
             Console.WriteLine((b));
 
-        }
-    }
-
-
-    public class Osoba
-
-
-    {
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
-
-
-
-    }
-
-}
+ }
+ Delegat Convert pozwala na konwertowanie typów - Delegat Converter<Tin,Tout>
