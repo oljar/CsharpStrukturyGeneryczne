@@ -6,14 +6,46 @@ namespace _4_MetodyDelegatyGeneryczne
     {
         static void Main(string[] args)
         {
-            static void KonsolaWypisz(double dane)//   Tu możnaby podstawić metodę druku na papier lub zapisu w bazie danych.
-            {
-                Console.WriteLine($"Wypisuję za pomocą delegata {dane}");
 
+
+            static void KonsolaWypisz(double dane)
+            {
+                Console.WriteLine($"wypisuję na konsoli - metoda statyczna {dane}");
             }
 
+            // Typ Action pozwala wpisać zmienną która będzie delegatem. Zmienna ta będzie się odnosiła do metody statycznej która  nic nie oddaje np Console.WriteLine();
+
+
+            // użycie metody statycznej 
+            Action<double> drukujA = KonsolaWypisz;
+
+            //poniżej wywołanie metody. 
+            drukujA(4.1);
+
+
+
+            // uzycie metody anonimowej 
+            Action<double> drukujB= delegate (double dane)
+            {
+                Console.WriteLine($"wypisuję na konsoli - metoda anonimowa {dane}");
+            };
+
+            drukujB(3.3);
             
-                var kolejka = new KolejkaKolowa<double>();
+            // uzycie lamdy
+            Action<double> drukuj = d => Console.WriteLine($"wypisuję na konsoli - lambda {d}");
+
+            drukuj(12);
+
+
+            Action<int, int, int> test = (a, b, c) => Console.WriteLine(a+b+c);
+            test(1, 2, 3);
+
+
+
+
+
+            var kolejka = new KolejkaKolowa<double>();
 
 
                 WprowadzanieDanych(kolejka);
@@ -23,7 +55,7 @@ namespace _4_MetodyDelegatyGeneryczne
              
 
 
-                kolejka.Drukuj(KonsolaWypisz); // Za kulisami Komilator potrafi utworzyć delegata. 
+                kolejka.Drukuj(drukuj); // Za kulisami Komilator potrafi utworzyć delegata. 
  
 
 
