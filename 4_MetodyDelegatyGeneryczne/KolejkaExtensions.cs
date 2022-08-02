@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Text;
 
 namespace _4_MetodyDelegatyGeneryczne
-{   // Deklaracja delegatu
-    public delegate void Drukarka(object dane);
+{   
+    
+    // Deklaracja delegatu
+    public delegate void Drukarka<T>(T dane); // typ zwracany też może być - ale tu jest void
 
     public static class KolejkaExtensions
     {
@@ -23,7 +25,7 @@ namespace _4_MetodyDelegatyGeneryczne
 
         // Statyczna metoda Drukuj definiuje  
      
-        public static void Drukuj<T>(this IKolejka<T> kolejka,Drukarka wydruk) // W 2-im parametrze dodano obiekt wydruk - typ Drukarka
+        public static void Drukuj<T>(this IKolejka<T> kolejka,Drukarka<T> wydruk) // W 2-im parametrze dodano obiekt wydruk - typ Drukarka
          // zmienna wydruk  jest typem delegatem czyli zmienną która posiada odniesienie do metody. 
         
         {

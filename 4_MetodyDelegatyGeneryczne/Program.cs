@@ -6,7 +6,7 @@ namespace _4_MetodyDelegatyGeneryczne
     {
         static void Main(string[] args)
         {
-            static void KonsolaWypisz(object dane)//   Tu możnaby podstawić metodę druku na papier lub zapisu w bazie danych.
+            static void KonsolaWypisz(double dane)//   Tu możnaby podstawić metodę druku na papier lub zapisu w bazie danych.
             {
                 Console.WriteLine($"Wypisuję za pomocą delegata {dane}");
 
@@ -20,16 +20,11 @@ namespace _4_MetodyDelegatyGeneryczne
 
                 //KonsolaWypisz  - metoda statyczna
 
-                Drukarka konsolaWyjscie = new Drukarka(KonsolaWypisz);// konsolaWyjście - delegat - używa metody statycznej jako parametru
+             
 
 
-                //Wywołanie Statycznej metody Drukuj z KolejkaExtension  parametrem jest obiekt konsolaWyjście klasy Drukarka czyli DELEGAT. 
-
-                
-                // Poniżej użycie metody Drukuj z delegatem
-                
-                kolejka.Drukuj(konsolaWyjscie);
-
+                kolejka.Drukuj(KonsolaWypisz); // Za kulisami Komilator potrafi utworzyć delegata. 
+ 
 
 
 
