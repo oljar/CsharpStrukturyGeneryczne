@@ -4,10 +4,10 @@ using System.Text;
 
 namespace Zdarzenia
 {
-    class AgendaEventArgs: EventArgs
+    public  class AgendaEventArgs:EventArgs
     {
 
-
-       
+        public Agenda Agenda { get; set; }
+        
     }
 }

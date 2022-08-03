@@ -19,7 +19,16 @@ namespace Zdarzenia
 
 
             // Wywołanie metody programu głównego 
-            agmr.AddAgenda();
+            agmr.AddAgenda(new Agenda()
+
+            { 
+
+                AgendaDate = DateTime.Now.AddDays(2),
+                AgendaName = "Kubuś Puchatek i jego grabki"
+            
+            
+            
+            });
           
 
 

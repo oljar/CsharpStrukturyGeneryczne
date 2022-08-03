@@ -10,14 +10,11 @@ namespace Zdarzenia
 
      // Odbiorca musi mieć ilość argumnetów i nazwę jak u Publishera
 
-        public void OnAddedAgenda(object o, EventArgs e)
+
+        public void OnAddedAgenda(object o, AgendaEventArgs e)
         {
-            Console.WriteLine("SMS został wysłany ");
+            Console.WriteLine("SMS został wysłany  Data : " + e.Agenda.AgendaDate + "Tytuł"+ e.Agenda.AgendaName);
         }
-
-
-
-
 
     }
 }

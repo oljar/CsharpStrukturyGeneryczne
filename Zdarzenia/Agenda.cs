@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Zdarzenia
 {
-    class Agenda
+    public class Agenda
     {
         public DateTime AgendaDate { get; set; }
 

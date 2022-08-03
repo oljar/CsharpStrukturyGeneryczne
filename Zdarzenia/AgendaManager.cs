@@ -10,8 +10,13 @@ namespace Zdarzenia
     // AgendMenager nie jest świadomy kogo zawiadamia
     {
      
-        public delegate void AddedAgendaEventHandler(object o, EventArgs e); // nazwa delegatu z użyciem czasu -Added-dodany
-        public event AddedAgendaEventHandler AddedAgenda;  // zdarzenie
+        //wersja dłuższa
+        //public delegate void AddedAgendaEventHandler(object o, AgendaEventArgs e); // nazwa delegatu z użyciem czasu -Added-dodany
+        //public event AddedAgendaEventHandler AddedAgenda;  // zdarzenie
+
+        public event EventHandler<AgendaEventArgs> AddedAgenda;   // wersja skrócona
+
+
 
 
         //  Następnie trzeba zrobić publisher - metodę która będzie uruchaminan gdy Event ma być publikowany. 
@@ -29,24 +34,23 @@ namespace Zdarzenia
 
         //poniżej Publisher 
 
-        protected virtual void OnAddedAgenda()
+        protected virtual void OnAddedAgenda(Agenda newAgenda)
         {
             if (AddedAgenda != null)
             {
-                AddedAgenda(this, EventArgs.Empty); //AddedAgenda - daje informację że nastąpiło zdarzenie - to delegat zdarzenia - definicja u góry
+                AddedAgenda(this, new AgendaEventArgs() { Agenda = newAgenda });
             }
         }
 
-
         // Klasa programu glównego 
-        public void AddAgenda()
+        public void AddAgenda(Agenda newAgenda)
         {
             Console.WriteLine("AddAgenda: Zaczynam działanie ...");
             Thread.Sleep(3000);
 
 
-            //Tutaj trzeba dodać wyzwalacz
-            OnAddedAgenda();  // wyzwalacz
+            //Tutaj trzeba dodać wywołanie 
+            OnAddedAgenda(newAgenda);  // wyzwalacz
 
 
             Console.WriteLine("AddAgenda: Skończyłem  działanie...");
